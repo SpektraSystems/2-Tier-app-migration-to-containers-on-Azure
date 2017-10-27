@@ -340,7 +340,7 @@
         },
         "PublicIPAddress": {
       "type":"string",
-      "value" : "[reference(variables('dnsLabelPrefix')).ipAddress]"
+      "value" : "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('dnsLabelPrefix'))).ipAddress]"
         }
     }
 }
