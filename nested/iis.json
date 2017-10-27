@@ -50,7 +50,7 @@
             "MachineName": "[parameters('virtualMachineName')]"
           }
         },
-        "protectedSettings": null
+        "protectedSettings": []
       }
     },
     {
