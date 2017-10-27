@@ -22,8 +22,8 @@
     }
   },
   "variables": {
-    "vmExtensionName": "dscExtension",
-    "nestedCustomTemplateFileName": "nestedCustom.json",
+    "vmExtensionName": "WebDeploy",
+    "nestedCustomTemplateFileName": "webDeploy.json",
     "scriptFolder": "scripts/",
     "nestedFolder": "nested/",
     "dscExtensionFileName": "ContosoWebsite.ps1.zip",
