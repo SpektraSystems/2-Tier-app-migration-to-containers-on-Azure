@@ -31,11 +31,12 @@
         "storageAccountType": "Standard_LRS",
         "virtualNetworkName": "VNET",
         "vnetAddressPrefix": "10.0.0.0/16",
-        "subnet1Name": "Subnet-1",
+        "subnet1Name": "Frontend-subnet",
         "subnet1Prefix": "10.0.0.0/24",
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', variables('subnet1Name'))]",
         "publicIPAddressType": "Dynamic",
         "publicIPAddressName": "PublicIP",
+        "dnsLabelPrefix":"[concat('dns', uniqueString(resourceGroup().id))]"
         "networkSecurityGroupName": "Nsg",
         "nicName": "NIC",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
@@ -56,7 +57,15 @@
         "sqlAuthenticationPassword": "dbPassw0rd",
         "rServicesEnabled": "false",
         "scriptsFolder": "scripts/",
-        "nestedFolder": "nested/"
+        "nestedFolder": "nested/",
+        "twoTierAppTags": {
+        "type": "object",
+        "provider": "NA"
+      },
+       "quickstartTags": {
+        "type": "object",
+        "name": "two-tier-app"
+      }
     },
     "resources": [{
             "name": "[parameters('virtualMachineName')]",
@@ -67,6 +76,11 @@
                 "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', variables('storageName'))]"
             ],
+        "tags":{
+            "displayName":"Virtual Machine",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
                 "osProfile": {
                     "computerName": "[parameters('virtualMachineName')]",
@@ -124,6 +138,11 @@
                 "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]",
                 "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]"
             ],
+            "tags":{
+            "displayName":"Virtual Machine Extensions",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
                 "type": "SqlIaaSAgent",
                 "publisher": "Microsoft.SqlServer.Management",
@@ -174,6 +193,11 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2015-06-15",
             "location": "[resourceGroup().location]",
+            "tags":{
+            "displayName":"Diagnostic VM Storage Account",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
                 "accountType": "[variables('storageAccountType')]"
             }
@@ -183,6 +207,11 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "2016-12-01",
             "location": "[resourceGroup().location]",
+            "tags":{
+            "displayName":"Virtual Network",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
@@ -192,8 +221,11 @@
                 "subnets": [{
                     "name": "[variables('subnet1Name')]",
                     "properties": {
-                        "addressPrefix": "[variables('subnet1Prefix')]"
-                    }
+                        "addressPrefix": "[variables('subnet1Prefix')]",
+                        "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+                }
+                  }, 
                 }]
             }
         },
@@ -207,6 +239,11 @@
                 "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]",
                 "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
             ],
+            "tags":{
+            "displayName":"Network Interface Card",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
                 "ipConfigurations": [{
                     "name": "ipconfig1",
@@ -219,19 +256,23 @@
                             "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
                         }
                     }
-                }],
-                "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-                }
-            }
+                }]  }
         },
         {
             "apiVersion": "2015-05-01-preview",
             "type": "Microsoft.Network/publicIPAddresses",
             "name": "[variables('publicIPAddressName')]",
             "location": "[resourceGroup().location]",
+            "tags":{
+            "displayName":"Public IP Address",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
-                "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
+                "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+                "dnsSettings": {
+                "domainNameLabel": "[variables('dnsLabelPrefix')]"
+           }
             }
         },
         {
@@ -239,6 +280,11 @@
             "type": "Microsoft.Network/networkSecurityGroups",
             "apiVersion": "2017-06-01",
             "location": "[resourceGroup().location]",
+            "tags":{
+            "displayName":"Network Security Group",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "properties": {
                 "securityRules": [{
                     "name": "default-allow-rdp",
@@ -259,6 +305,11 @@
             "name": "nestedCustom",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2016-09-01",
+            "tags":{
+            "displayName":"Nested Deployment",
+            "quickstartName": "[variables('quickstartTags').name]",        
+            "provider": "[variables('twoTierAppTags').provider]"
+         },
             "dependsOn": [
                 "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'),'/extensions/', '/SqlIaasExtension')]"
             ],
@@ -286,6 +337,10 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
+        },
+        "PublicIPAddress": {
+      "type":"string",
+      "value" : "[reference(variables('dnsLabelPrefix')).ipAddress]"
         }
     }
 }
