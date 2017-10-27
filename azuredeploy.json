@@ -36,7 +36,7 @@
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', variables('subnet1Name'))]",
         "publicIPAddressType": "Dynamic",
         "publicIPAddressName": "PublicIP",
-        "dnsLabelPrefix":"[concat('dns', uniqueString(resourceGroup().id))]"
+        "dnsLabelPrefix":"[concat('dns', uniqueString(resourceGroup().id))]",
         "networkSecurityGroupName": "Nsg",
         "nicName": "NIC",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
