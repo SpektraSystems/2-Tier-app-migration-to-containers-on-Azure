@@ -337,10 +337,6 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
-        },
-        "PublicIPAddress": {
-      "type":"string",
-      "value" : "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('dnsLabelPrefix'))).ipAddress]"
         }
     }
 }
