@@ -135,7 +135,6 @@
             "name": "[concat(parameters('virtualMachineName'), '/SqlIaasExtension')]",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]",
                 "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]"
             ],
             "tags":{
@@ -213,7 +212,7 @@
             "provider": "[variables('twoTierAppTags').provider]"
          },
             "dependsOn": [
-                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('networkSecurityGroupName'))]"
+                "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
             ],
             "properties": {
                 "addressSpace": {
