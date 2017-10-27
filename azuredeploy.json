@@ -40,7 +40,7 @@
         "nicName": "NIC",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnet1Name'))]",
-        "nestedDscTemplateFileName": "nestedDsc.json",
+        "nestedDscTemplateFileName": "nested.json",
         "virtualMachineSize": "Standard_D2_v2",
         "sqlConnectivityType": "Private",
         "sqlPortNumber": 1433,
