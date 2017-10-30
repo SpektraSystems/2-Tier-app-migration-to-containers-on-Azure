@@ -307,14 +307,14 @@
             "name": "deployIIS",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2016-09-01",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'),'/extensions/', '/SqlIaasExtension')]"
+            ],
             "tags":{
             "displayName":"Nested Deployment",
             "quickstartName": "[variables('quickstartTags').name]",        
             "provider": "[variables('twoTierAppTags').provider]"
          },
-            "dependsOn": [
-                "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'),'/extensions/', '/SqlIaasExtension')]"
-            ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
