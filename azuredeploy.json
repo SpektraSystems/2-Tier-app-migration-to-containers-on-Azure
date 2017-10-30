@@ -336,7 +336,7 @@
             "value": "[parameters('adminUsername')]"
         },
         "publicIP":{
-            "value":"[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('dnsLabelPrefix'))).dnsSettings.fqdn]",
+            "value":"[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))).dnsSettings.fqdn]",
             "type":"string"
          }
     }
