@@ -310,11 +310,6 @@
             "dependsOn": [
                 "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'),'/extensions/', '/SqlIaasExtension')]"
             ],
-            "tags":{
-            "displayName":"Nested Deployment",
-            "quickstartName": "[variables('quickstartTags').name]",        
-            "provider": "[variables('twoTierAppTags').provider]"
-         },
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
