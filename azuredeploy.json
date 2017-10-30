@@ -339,6 +339,10 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
-        }
+        },
+        "publicIP":{
+            "value":"[variables('dnsLabelPrefix')]",
+            "type":"string"
+         }
     }
 }
