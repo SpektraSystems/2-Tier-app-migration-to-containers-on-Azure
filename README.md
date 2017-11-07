@@ -7,4 +7,5 @@
 Below diagram shows the On-premises environment where we do have MS SQL database on same/different machine and WebApp running in IIS server. We are looking forward to migrate this app on Container and PaaS DB on Azure using the [guide](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2F2-Tier-app-migration-to-containers-on-Azure%2Fmaster%2Fazuredeploy.json)
 <img src="images/onPremApp.jpg"/> 
 
+Post migration of the app and db using the guide, your Azure enviroment will be as per the below diagram
 <img src="images/ContainerApp.jpg"/> 
