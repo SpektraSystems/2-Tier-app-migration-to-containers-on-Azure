@@ -5,3 +5,5 @@
 [Download Guide](https://raw.githubusercontent.com/SpektraSystems/2-Tier-app-migration-to-containers-on-Azure/master/Two-tier%20App%20migration%20on%20Azure%20Container.pdf)
 
 <img src="images/onPremApp.jpg"/> 
+
+<img src="images/ContainerApp.jpg"/> 
