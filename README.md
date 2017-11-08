@@ -20,20 +20,20 @@ This template will deploy:
 
 Post migration of the app and db using the guide, your Azure enviroment will be as per the below diagram
 <img src="images/ContainerApp.jpg"/> 
-Licenses and Costs
+## Licenses and Costs
 This uses Windows server 2016 image which will be licensed automatically after the instance is launched first time and user will be charged hourly for Microsoft's Windows VM rates. Click here for pricing details.
 Prerequisites
-•	Azure Subscription with specified payment method or Azure credits
-Deployment Steps
+*	Azure Subscription with specified payment method or Azure credits
+## Deployment Steps
 Build your Two-tier on-premises app simulation on Azure in a few simple steps:
-•	Launch the Template by click on Deploy to Azure button.
-•	Fill in all the required parameter values. Accept the terms and condition on click Purchase.
-•	Access the deployment job once it is successful. In deployment job output, you will find the Public IP Address of VMs which can be used connect to the VMs.
-•	Open MS SQL Studio and verify the database is successfully created
-•	Open IIS Manager and verify website is created and launch the same in browser.
-•	Follow the post deployment configuration document here to learn about further configuration.
-Deployment Time
+*	Launch the Template by click on Deploy to Azure button.
+*	Fill in all the required parameter values. Accept the terms and condition on click Purchase.
+*	Access the deployment job once it is successful. In deployment job output, you will find the Public IP Address of VMs which can be used connect to the VMs.
+*	Open MS SQL Studio and verify the database is successfully created
+*	Open IIS Manager and verify website is created and launch the same in browser.
+*	Follow the post deployment configuration document here to learn about further configuration.
+## Deployment Time
 The deployment takes about 20 minutes to complete.
 Support
 For any support related questions, issues or customization requirements, please contact info@spektrasystems.com
-**** End***
+***End***
