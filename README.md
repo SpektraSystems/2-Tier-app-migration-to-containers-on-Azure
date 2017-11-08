@@ -4,19 +4,18 @@
 
 [Download Guide](https://raw.githubusercontent.com/SpektraSystems/2-Tier-app-migration-to-containers-on-Azure/master/Two-tier%20App%20migration%20on%20Azure%20Container.pdf)
 
-Solution Overview
+## Solution Overview
 This Azure QuickStart template deploys the simulation infrastructure for on-premises two-tier DOTNET application on IIS and MS SQL database on a single Microsoft Windows virtual machine.
 Once deployment finishes, you can connect to deployed VM and verify the database as well as website in IIS and test application by launching the same in browser.
 Template Solution Architecture
 This template will deploy:
-•	One storage account
-•	One Virtual Network with one subnets
-•	One Network Security Group
-•	1 Public IP
-•	One Web and SQL VM
-•	Installation and configuration of MS SQL database and DotNet Website
+*	One storage account
+*	One Virtual Network with one subnets
+*	One Network Security Group
+*	1 Public IP
+*	One Web and SQL VM
+*	Installation and configuration of MS SQL database and DotNet Website
 
-(https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2F2-Tier-app-migration-to-containers-on-Azure%2Fmaster%2Fazuredeploy.json)
 <img src="images/onPremApp.jpg"/> 
 
 Post migration of the app and db using the guide, your Azure enviroment will be as per the below diagram
