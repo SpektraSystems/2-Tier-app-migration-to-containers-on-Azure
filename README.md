@@ -33,8 +33,8 @@ This template will deploy:
 Post migration of the app and db using the guide, your Azure enviroment will be as per the below diagram
 <img src="images/ContainerApp.jpg"/> 
 ## Licenses and Costs
-This uses Windows server 2016 image which will be licensed automatically after the instance is launched first time and user will be charged hourly for Microsoft's Windows VM rates. Click here for pricing details.
-Prerequisites
+This uses Windows server 2016 image which will be licensed automatically after the instance is launched first time and user will be charged hourly for Microsoft's Windows VM rates. Click [here](https://azuremarketplace.microsoft.com/en-in/marketplace/apps/Microsoft.WindowsServer?tab=PlansAndPrice) for pricing details.
+## Prerequisites
 *	Azure Subscription with specified payment method or Azure credits
 ## Deployment Steps
 Build your Two-tier on-premises app simulation on Azure in a few simple steps:
