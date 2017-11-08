@@ -47,6 +47,6 @@ Build your Two-tier on-premises app simulation on Azure in a few simple steps:
 *	Follow the post deployment configuration document here to learn about further configuration.
 ## Deployment Time
 The deployment takes about 20 minutes to complete.
-Support
+## Support
 For any support related questions, issues or customization requirements, please contact info@spektrasystems.com <br/>
 ****End****
