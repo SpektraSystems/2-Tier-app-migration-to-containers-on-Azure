@@ -7,7 +7,7 @@
 ## Solution Overview
 This Azure QuickStart template deploys the simulation infrastructure for on-premises two-tier DOTNET application on IIS and MS SQL database on a single Microsoft Windows virtual machine.
 Once deployment finishes, you can connect to deployed VM and verify the database as well as website in IIS and test application by launching the same in browser.
-Template Solution Architecture
+## Template Solution Architecture
 This template will deploy:
 *	One storage account
 *	One Virtual Network with one subnets
