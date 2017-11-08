@@ -4,8 +4,37 @@
 
 [Download Guide](https://raw.githubusercontent.com/SpektraSystems/2-Tier-app-migration-to-containers-on-Azure/master/Two-tier%20App%20migration%20on%20Azure%20Container.pdf)
 
-Below diagram shows the On-premises environment where we do have MS SQL database on same/different machine and WebApp running in IIS server. We are looking forward to migrate this app on Container and PaaS DB on Azure using the [guide](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2F2-Tier-app-migration-to-containers-on-Azure%2Fmaster%2Fazuredeploy.json)
+Solution Overview
+This Azure QuickStart template deploys the simulation infrastructure for on-premises two-tier DOTNET application on IIS and MS SQL database on a single Microsoft Windows virtual machine.
+Once deployment finishes, you can connect to deployed VM and verify the database as well as website in IIS and test application by launching the same in browser.
+Template Solution Architecture
+This template will deploy:
+•	One storage account
+•	One Virtual Network with one subnets
+•	One Network Security Group
+•	1 Public IP
+•	One Web and SQL VM
+•	Installation and configuration of MS SQL database and DotNet Website
+
+(https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2F2-Tier-app-migration-to-containers-on-Azure%2Fmaster%2Fazuredeploy.json)
 <img src="images/onPremApp.jpg"/> 
 
 Post migration of the app and db using the guide, your Azure enviroment will be as per the below diagram
 <img src="images/ContainerApp.jpg"/> 
+Licenses and Costs
+This uses Windows server 2016 image which will be licensed automatically after the instance is launched first time and user will be charged hourly for Microsoft's Windows VM rates. Click here for pricing details.
+Prerequisites
+•	Azure Subscription with specified payment method or Azure credits
+Deployment Steps
+Build your Two-tier on-premises app simulation on Azure in a few simple steps:
+•	Launch the Template by click on Deploy to Azure button.
+•	Fill in all the required parameter values. Accept the terms and condition on click Purchase.
+•	Access the deployment job once it is successful. In deployment job output, you will find the Public IP Address of VMs which can be used connect to the VMs.
+•	Open MS SQL Studio and verify the database is successfully created
+•	Open IIS Manager and verify website is created and launch the same in browser.
+•	Follow the post deployment configuration document here to learn about further configuration.
+Deployment Time
+The deployment takes about 20 minutes to complete.
+Support
+For any support related questions, issues or customization requirements, please contact info@spektrasystems.com
+**** End***
