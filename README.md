@@ -24,8 +24,8 @@ This template will deploy:
 *	One storage account
 *	One Virtual Network with one subnets
 *	One Network Security Group
-*	1 Public IP
-*	One Web and SQL VM
+*	One Public IP
+*	One Windows Server VM
 *	Installation and configuration of MS SQL database and DotNet Website
 
 <img src="images/onPremApp.jpg"/> 
