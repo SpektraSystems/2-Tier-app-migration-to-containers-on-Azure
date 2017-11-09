@@ -348,6 +348,10 @@
             "type": "string",
             "value": "[parameters('adminUsername')]"
         },
+        "adminPassword":{
+            "type": "string",
+            "value": "[parameters('adminPassword')]"
+        },
         "publicIP":{
             "value":"[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))).dnsSettings.fqdn]",
             "type":"string"
